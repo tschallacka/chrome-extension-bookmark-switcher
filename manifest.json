@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Bookmark Folder Switcher",
-  "version": "1.0",
-  "description": "Switch and save hotbar bookmarks with 'Other Bookmarks' folders.",
+  "name": "Bookmark Bar Switcher",
+  "version": "1.0.1",
+  "description": "Switch and save Bookmark bar contents with 'Other Bookmarks' folders.",
   "permissions": ["bookmarks", "storage"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Bookmark Folder Switcher"
+    "default_title": "Bookmark Bar Switcher"
   },
   "background": {
     "service_worker": "background.js"
