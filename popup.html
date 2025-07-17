@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Folder Switcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="container">
+    <h1>Manage Hotbar</h1>
+    <div id="search-container">
+        <input type="text" id="search" placeholder="Search Bookmark Sets..." />
+        <div id="create-from-search" style="display: none;">
+            <button id="create-search-set">Create new set?</button>
+        </div>
+    </div>
+    <ul id="folder-list"></ul>
+    <div id="add-new-container">
+        <button id="add-new-set">+ Add New Bookmark Set</button>
+    </div>
+    <div id="prompt-container" style="display: none;">
+        <label for="hotbar-name">Enter a name for the bookmark set:</label>
+        <input type="text" id="hotbar-name" />
+        <button id="save-hotbar-name">Save</button>
+    </div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

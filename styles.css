@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    width: 300px;
+}
+
+h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#search-container {
+    margin-bottom: 10px;
+}
+
+#search {
+    width: 90%;
+    padding: 8px;
+    font-size: 14px;
+}
+
+#folder-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#folder-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#folder-list li:hover {
+    background-color: #f0f0f0;
+}
+
+#folder-list li.highlight {
+    background-color: #cce5ff;
+}
+
+#prompt-container {
+    margin-top: 20px;
+}
+
+#hotbar-name {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.highlight {
+    background-color: #ffff00;
+    color: #000000;
+    font-weight: bold;
+}
+/* Add New Set button styles */
+#add-new-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#add-new-set {
+    width: 100%;
+    padding: 8px;
+    background-color: #ea9221;
+    border: 1px solid #b56301;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#add-new-set:hover {
+    background-color: #e38f53;
+}
+
+/* Create from search button styles */
+#create-from-search {
+    margin-top: 5px;
+    text-align: center;
+}
+
+#create-search-set {
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#create-search-set:hover {
+    background-color: #45a049;
+}
+
+/* Prompt container styles */
+#prompt-container {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#hotbar-name {
+    width: calc(100% - 10px);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#save-hotbar-name {
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#save-hotbar-name:hover {
+    background-color: #45a049;
+}
+.folder-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 300ms ease-out,
+    border-left 300ms ease-out,
+    font-weight 300ms ease-out,
+    box-shadow 300ms ease-out;
+}
+
+.folder-item:hover {
+    background-color: #f0f0f0;
+}
+
+.folder-item.active {
+    background-color: #e6f7ff;
+    border-left: 3px solid #1890ff;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.folder-item.will-be-active {
+    /* Visually show it's going to be active but don't move it yet */
+    background-color: #e6f7ff;
+    border-left: 3px solid #1890ff;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.folder-item.will-be-inactive {
+    /* Start transitioning the styling back to neutral */
+    background-color: transparent;
+    border-left: 0;
+    font-weight: normal;
+    box-shadow: none;
+}
