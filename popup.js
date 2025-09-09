@@ -586,7 +586,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const tree = await chrome.bookmarks.getTree();
         // Find "Other Bookmarks" - its position can vary by browser
         const otherBookmarks = tree[0].children.find(node =>
-            node.title === "Other bookmarks" || node.title === "Other Bookmarks"
+            node.folderType === "other"
         );
         return otherBookmarks;
     }
@@ -596,7 +596,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const tree = await chrome.bookmarks.getTree();
         // Find "Bookmarks Bar" - its position can vary by browser
         const bookmarksBar = tree[0].children.find(node =>
-            node.title === "Bookmarks bar" || node.title === "Bookmarks Bar"
+            node.folderType === "bookmarks-bar"
         );
         return bookmarksBar;
     }
