@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Bookmark Bar Switcher",
-  "version": "1.0.1",
-  "description": "Switch and save Bookmark bar contents with 'Other Bookmarks' folders.",
+  "version": "1.0.3",
+  "description": "Switch and save Bookmark Bar contents with 'Other Bookmarks' folders.",
   "permissions": ["bookmarks", "storage"],
   "action": {
     "default_popup": "popup.html",

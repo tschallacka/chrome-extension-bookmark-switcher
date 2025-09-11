@@ -1,4 +1,4 @@
-# Bookmark Hotbar Manager - Chrome Extension
+# Bookmark Bar Switcher - Chrome Extension
 
 **Making bookmark management actually sane**
 
@@ -6,7 +6,7 @@
 
 Ever felt frustrated when your bookmark bar is cluttered with links from different projects? I created this extension because I was tired of constantly reorganizing my bookmarks when switching between work tasks.
 
-Bookmark Hotbar Manager lets you create and switch between different sets of bookmarks with a click. Think of it like having multiple browser profiles without the hassle - just the bookmarks change.
+Bookmark Bar Switcher lets you create and switch between different sets of bookmarks with a click. Think of it like having multiple browser profiles without the hassle - just the bookmarks change.
 
 ## What it does
 

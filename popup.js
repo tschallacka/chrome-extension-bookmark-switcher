@@ -8,21 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const createFromSearchContainer = document.getElementById("create-from-search");
     const createSearchSetButton = document.getElementById("create-search-set");
 
-
-    let otherBookmarksId = null;
-
-    // Get the "Other Bookmarks" folder
-    async function getOtherBookmarks() {
-        const tree = await chrome.bookmarks.getTree();
-        const otherBookmarks = findFolder(tree[0], "Other bookmarks");
-        otherBookmarksId = otherBookmarks?.id || null;
-        return otherBookmarks?.children || [];
-    }
-
-
-    // Add this to your DOMContentLoaded event listener in popup.js
-
-// Add a keydown event listener to capture typing when popup is active
+    // Add a keydown event listener to capture typing when the popup is active
     document.addEventListener("keydown", (event) => {
         // Skip if the event target is already an input or if special keys are pressed
         if (
@@ -53,7 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             event.preventDefault();
         }
     });
-
 
     // Search and highlight function similar to PhpStorm
     searchInput.addEventListener("input", () => {
@@ -132,14 +117,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // Add event listener for the "Add New Set" button
+    // Add an event listener for the "Add New Set" button
     addNewSetButton.addEventListener("click", () => {
         hotbarInput.value = ""; // Clear the input field
         promptContainer.style.display = "block"; // Show the prompt
         hotbarInput.focus(); // Focus the input field
     });
 
-    // Add event listener for the "Create new set?" button from search
+    // Add an event listener for the "Create new set?" button from search
     createSearchSetButton.addEventListener("click", () => {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
@@ -170,7 +155,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-// Function to highlight continuous matches
+    // Function to highlight continuous matches
     function highlightContinuousMatch(text, query) {
         const lowerText = text.toLowerCase();
         const startIndex = lowerText.indexOf(query.toLowerCase());
@@ -190,7 +175,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
-// Improved function to check and highlight separated matches
+    // Improved function to check and highlight separated matches
     function checkSeparatedMatch(text, query) {
         const lowerText = text.toLowerCase();
         const lowerQuery = query.toLowerCase();
@@ -207,7 +192,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let lastMatchIndex = -1;
         let queryIndex = 0;
 
-        // Find longest possible segments in order
+        // Find the longest possible segments in order
         while (queryIndex < lowerQuery.length) {
             let longestSegment = "";
             let bestMatchIndex = -1;
@@ -238,7 +223,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         }
 
-        // Calculate total distance between matched segments
+        // Calculate the total distance between matched segments
         for (let i = 1; i < segments.length; i++) {
             result.totalDistance += segments[i].index - (segments[i-1].index + segments[i-1].text.length);
         }
@@ -262,6 +247,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             totalDistance: result.totalDistance
         };
     }
+
     listElement.addEventListener("click", async event => {
         if (event.target.tagName === "LI") {
             const selectedId = event.target.dataset.id; // ID of the clicked folder
@@ -460,7 +446,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Create a combined list including the active folder (which may be in the hotbar)
             let allFolders = [...folders];
 
-            // Check if active folder exists in the list, if not, create a virtual entry for it
+            // Check if the active folder exists in the list, if not, create a virtual entry for it
             const activeExists = folders.some(folder => folder.id === currentActiveFolderId);
             if (currentActiveFolderId && currentActiveFolderName && !activeExists) {
                 // Add the active folder as a virtual entry
